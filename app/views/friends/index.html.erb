@@ -1,0 +1,34 @@
+<table class="table table-striped table-bordered">
+  <thead class="thead-dark">
+    <tr>
+      <th>이름</th>
+      <th>성</th>
+      <th>이메일</th>
+      <th>전화번호</th>
+      <th>트위터</th>
+      <th>유저 ID</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @friends.each do |friend| %>
+      <tr>
+        <td><%= friend.first_name %></td>
+        <td><%= friend.last_name %></td>
+        <td><%= friend.email %></td>
+        <td><%= friend.phone %></td>
+        <td><%= friend.twitter %></td>
+        <td><%= friend.user_id %></td>
+        <td><%= link_to '보기', friend %></td>
+
+        <td><%= link_to '수정', edit_friend_path(friend) %></td>
+        <td><%= link_to '삭제', friend, method: :delete, data: { confirm: '확실하니?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to '친구 추가', new_friend_path, class:"btn btn-secondary" %>
