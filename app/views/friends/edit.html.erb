@@ -5,4 +5,5 @@
 
 <br/>
 <%= link_to '보기', @friend, class:'btn btn-secondary' %>
+<%= link_to '삭제', @friend, method: :delete, data: { confirm: '확실하니?' }, class:'btn btn-danger' %>
 <%= link_to '뒤로가기', friends_path, class:'btn btn-dark'%>

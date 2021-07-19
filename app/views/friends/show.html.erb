@@ -8,6 +8,7 @@
 
   <br/>
   <%= link_to '수정', edit_friend_path(@friend), class:"btn btn-secondary" %>
+  <%= link_to '삭제', @friend, method: :delete, data: { confirm: '확실하니?' }, class:'btn btn-danger' %>
   <%= link_to '홈으로 이동', friends_path, class:"btn btn-dark" %>
 
 </div>
